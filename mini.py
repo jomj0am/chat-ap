@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from g4f.client import Client
 from flask_caching import Cache
+from flask_cors import CORS  # Added for CORS
 from langdetect import detect, DetectorFactory
 import re
 
@@ -8,6 +9,9 @@ import re
 DetectorFactory.seed = 0
 
 app = Flask(__name__)
+
+# Enable CORS for the app, allowing requests from any origin
+CORS(app)  # You can restrict origins by adding parameters like resources={r"/chat": {"origins": "*"}} for all or specific origins.
 
 # Configure caching
 app.config['CACHE_TYPE'] = 'simple'  # For simple in-memory caching
@@ -20,24 +24,14 @@ responses = {
     "who are you": "I’m Gora-AI, developed by J.Obadiah alias( Jom Irish ) from Tanzania. I’m here to assist with your questions and provide helpful information.",
     "who are you?": "I’m Gora-AI, developed by J.Obadiah alias( Jom Irish ) from Tanzania. I’m here to assist with your questions and provide helpful information.",
     "what is chatgpt": "ChatGPT is an AI language model created by Reconnect. It uses machine learning to generate human-like text based on input.",
-    # ... other responses ...
+    # Add other responses here if needed
 }
 
-
-# the future while maintaining the 
-# core values of journalism. By providing
-# journalists with the tools they need
-# to thrive in a rapidly changing world,
-# UTPC is not only safeguarding the profession
-# but also contributing to the overall 
-# development of a more informed and 
-# democratic society in Tanzania.
-
+# Function to format the response for better readability
 def format_response(text):
     # Basic formatting for paragraphs and lists
-    # Replace new lines with paragraph tags
-    text = re.sub(r'\n+', '</p><p>', text)
-    text = f'<p>{text}</p>'
+    text = re.sub(r'\n+', '</p><p>', text)  # Replace new lines with paragraph tags
+    text = f'<p>{text}</p>'  # Wrap text in <p> tags
     
     # Convert simple text lists into HTML lists
     text = re.sub(r'^(\d+\.)\s+(.*)', r'<li>\2</li>', text, flags=re.MULTILINE)
@@ -68,7 +62,7 @@ def chat():
             )
             bot_response = response.choices[0].message.content
 
-            # Replace "chatGPT" with "UTPC-AI"
+            # Replace "chatGPT" with "GORA-AI"
             bot_response = bot_response.replace("chatGPT", "GORA-AI")
             bot_response = bot_response.replace("ChatGPT", "GORA-AI")
 
@@ -78,7 +72,9 @@ def chat():
             # Detect language and filter responses
             detected_language = detect(bot_response)
             if detected_language not in ['en', 'sw']:
-                return jsonify({'response': 'Sorry, I am still under development. There is an error in detecting the language. Please use Swahili or English, and if necessary, refresh your website. %%&&&&&&&&&&&&&&&&&$$$$ __Samahani, bado niko katika hatua za maendeleo.Kuna hitilafu katika kugundua lugha.Tafadhali tumia Lugha ya Kiswahili au Kingereza ikibidi sasisha upya tovuti yako. '})
+                return jsonify({
+                    'response': 'Sorry, I am still under development. There is an error in detecting the language. Please use Swahili or English, and if necessary, refresh your website. %%&&&&&&&&&&&&&&&&&$$$$ __Samahani, bado niko katika hatua za maendeleo.Kuna hitilafu katika kugundua lugha.Tafadhali tumia Lugha ya Kiswahili au Kingereza ikibidi sasisha upya tovuti yako.'
+                })
 
             # Format response for better readability
             formatted_response = format_response(bot_response)
