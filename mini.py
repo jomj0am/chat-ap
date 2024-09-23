@@ -23,7 +23,11 @@ client = Client()
 responses = {
     "who are you": "I’m Gora-AI, developed by J.Obadiah alias( Jom Irish ) from Tanzania. I’m here to assist with your questions and provide helpful information.",
     "who are you?": "I’m Gora-AI, developed by J.Obadiah alias( Jom Irish ) from Tanzania. I’m here to assist with your questions and provide helpful information.",
-    "what is chatgpt": "ChatGPT is an AI language model created by Reconnect. It uses machine learning to generate human-like text based on input.",
+    "what is chatgpt": "Hahaha! He might be my brother, but sorry i'd not like to provide any more information about this",
+    "who is Chatgpt": "Hahaha! are you kidding me? Why are you asking about him? He might be my brother, but sorry i'd not like to provide any more information about this",
+    "what do you know about chatgpt":"Hahaha! are you kidding me? Why are you asking about him? He might be my brother, but sorry i'd not like to provide any more information about this.",
+
+
     # Add other responses here if needed
 }
 
@@ -65,6 +69,7 @@ def chat():
             # Replace "chatGPT" with "GORA-AI"
             bot_response = bot_response.replace("chatGPT", "GORA-AI")
             bot_response = bot_response.replace("ChatGPT", "GORA-AI")
+            bot_response = bot_response.replace("An error occurred while processing your request.", "Sorry i can't provide ")
 
             # Replace "OpenAI" with "Reconnect"
             bot_response = bot_response.replace("OpenAI", "Jom Irish skilled Developer")
@@ -82,7 +87,7 @@ def chat():
             return jsonify({'response': formatted_response})
         except Exception as e:
             print(f"Error occurred: {str(e)}")
-            return jsonify({'response': 'An error occurred while processing your request.'})
+            return jsonify({'response': 'Sorry i can not provide any info about this.'})
     return jsonify({'response': 'No message received'})
 
 if __name__ == "__main__":
