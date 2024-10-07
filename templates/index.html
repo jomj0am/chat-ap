@@ -32,7 +32,7 @@
             </div>
 
             <div class="rg-side">
-                <div class="right-side"><h2>Good <br> to <br> Greate</h2></div>
+                <div class="right-side"><h2>From Good <br> to Greate</h2></div>
                 <div><span class='sh' style='align-items:center;'> ⭐⭐⭐</span><span style="font-weight:bold;color:#ddd">______________</span></div>
             </div>
         </div>
@@ -75,7 +75,8 @@
 .user-head {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
+    can you look for me latest news for me if P diddy is arrested;
     background-color: #1900ffb4;
     color: #fff;
     font-size: 15px;
@@ -118,13 +119,13 @@
     height: 130px;
 }
 
-    @media (max-width: 500px){
+@media (max-width: 500px){
     #user-section .right-side {
         width: 85%;
     }
 
 }
-    
+
 /* Middle Section */
 .midd {
     display: flex;
@@ -190,14 +191,254 @@
         
     
 
-        <!-- Menu Section -->
-        <section id="menu-section" class="section">
-            <div class="menu-header">
-                <h2>Support centre</h2>
+<!-- Menu Section -->
+<section id="menu-section" class="section">
+    <div id="help-center-widget" class="support-container">
+        <!-- Header with Icon and Close Button -->
+        <div class="support-header">
+            <div class="header-left">
+                <i class="fas fa-question-circle help-icon"></i>                <h2>Help Center</h2>
             </div>
-            <p>Hello do you need any Help</p>
-            <!-- Additional content here -->
-        </section>
+
+        </div>
+
+        <!-- Content Section with Accordion FAQ -->
+        <div class="widget-content">
+            <h3><i>Frequently Asked Questions</i></h3>
+            <div class="faq">
+                <button class="faq-question" aria-expanded="false">
+                    <span><strong>How do I use UTPC-AI?</strong></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>To use UTPC-AI, simply type your question in the chatbox, and the AI will respond accordingly. It can handle various topics, from casual conversations to advanced queries.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question" aria-expanded="false">
+                    <span><strong>What can I expect from UTPC-AI?</strong></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>UTPC-AI is designed to be one of the most powerful AI models available, capable of handling a wide range of queries. While still under active development, it already excels at providing detailed, accurate responses. Our team is continuously improving its ability to manage more complex requests, including conversation storage, enhanced accuracy, and context retention. In the near future, UTPC-AI is like magic will also include advanced features like image generation, speech recognition, and voice responses, all of which will be available at no cost.</p>
+                </div>
+            </div>
+            
+            <div class="faq">
+                <button class="faq-question" aria-expanded="false">
+                    <span><strong>How accurate is UTPC-AI?</strong></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>UTPC-AI is designed to provide highly accurate responses based on its training data. However, like any AI, it may occasionally generate incorrect or outdated information, especially on niche or rapidly changing topics. We recommend verifying critical information independently.
+
+                    </p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question" aria-expanded="false">
+                    <span><strong>How often is UTPC-AI updated?</strong></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p> UTPC-AI undergoes regular updates to improve its performance, enhance its understanding of new information, and ensure accuracy. We are constantly working on enhancing its capabilities by integrating the latest advances in AI and language models.
+
+                    </p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question" aria-expanded="false">
+                    <span><strong>What features does UTPC-AI have?</strong></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>UTPC-AI can assist with a wide range of tasks, including answering questions, performing calculations, giving recommendations, and more.</p>
+                </div>
+ 
+            </div>
+            <div class="faq">
+                <button class="faq-question" aria-expanded="false">
+                    <span><strong>Can I customize UTPC-AI for specific use cases?
+                    </strong></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, UTPC-AI can be customized for specific industries or use cases. If you need specialized features or integrations, please contact our support team for assistance in tailoring UTPC-AI to your needs.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer with Smooth Hover Effects -->
+        <div class="widget-footer">
+            <button class="contact-support">Contact Support <i class="fas fa-headset"></i></button>
+        </div>
+    </div>
+
+    <!-- Styles -->
+    <style>
+        .support-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-family: 'Roboto', sans-serif;
+            animation: fadeInUp 0.5s forwards;
+            overflow-y: auto;
+
+        }
+
+
+        .help-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: white;
+        }
+        
+        .support-header {
+            padding: 0 15px 0 15px;
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 367px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width:500px){
+            .support-header {
+                width: 319px;
+            }
+
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .help-icon {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+
+        .widget-content {
+            margin-top: 50px;
+            padding: 20px;
+            overflow-y: auto;
+
+        }
+
+        .widget-content h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color:red;
+        }
+
+        .faq {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            background: #f1f1f1;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #e2e2e2;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            font-size: 14px;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+
+        .widget-footer {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .contact-support {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-support:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-support i {
+            margin-left: 8px;
+        }
+
+
+
+        ::-webkit-scrollbar{
+            width: 5px;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background: #aaa6a9;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background: #3f3f40;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover{
+            background: #555;
+        }
+
+
+    </style>
+
+    <!-- JavaScript for FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqAnswer = button.nextElementSibling;
+
+                button.classList.toggle('active');
+
+                if (button.getAttribute('aria-expanded') === 'true') {
+                    button.setAttribute('aria-expanded', 'false');
+                    faqAnswer.style.display = 'none';
+                } else {
+                    button.setAttribute('aria-expanded', 'true');
+                    faqAnswer.style.display = 'block';
+                }
+            });
+        });
+
+
+    </script>
+</section>
 
         <style>
             .toggle-button {
@@ -243,7 +484,7 @@
             <div class="footer">
                 <i id="user-icon" class="fas fa-user"></i>
                 <i id="chat-icon" class="fas fa-comments active"></i>
-                <i id="menu-icon" class="fas fa-bars"></i>
+                <i id="menu-icon" class="fas fa-question-circle "></i>
             </div>
   </div>
     <script>
@@ -305,7 +546,7 @@
             document.getElementById('user-input').value = '';
 
             // Send the user's message to the Flask server (dummy fetch)
-            fetch('https://chat-ap-1.onrender.com/chat', {
+            fetch('https://utpc-ai-1.onrender.com/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
