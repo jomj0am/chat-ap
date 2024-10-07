@@ -105,7 +105,7 @@
 }
 #user-section .right-side {
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
     color: #ddd;
     align-items: center;
     justify-content: center;
@@ -118,6 +118,13 @@
     height: 130px;
 }
 
+    @media (max-width: 500px){
+    #user-section .right-side {
+        width: 85%;
+    }
+
+}
+    
 /* Middle Section */
 .midd {
     display: flex;
@@ -349,7 +356,7 @@ widget.style.display = 'none';
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f9f9f9;
+            background-color:#00000056;
         }
         
         /* Chat Container */
@@ -364,18 +371,29 @@ widget.style.display = 'none';
             border-radius: 15px 15px 0 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            background-color: white;
+            background-color:#fceff9;
+
         }
         .widget {
             position: fixed; /* Make the widget fixed so it stays in position */
             bottom: 80px; /* Adjust the bottom margin to be above the toggle button */
-            right: 20px; /* Align it to the right, same as the button */
+            right: 10px; /* Align it to the right, same as the button */
             max-width: 400px;
             width: 100%;
             box-shadow: 0 0 10px black;
             border-radius: 15px;
             border: 1px solid #ddd;
             z-index: 1000; /* Ensure it appears above other elements */
+        }
+
+        @media (max-width:500px){
+            .widget {
+                max-width: 350px;
+            }
+            #chat-section,user-section,menu-section{
+                width:350px !important;
+            }
+
         }
         /* Header Styles */
         .chat-header{
@@ -389,7 +407,7 @@ widget.style.display = 'none';
         
         /* Chat Section */
         #chat-section,user-section,menu-section{
-            width:400px !important;
+            width:auto !important;
         }
         
         .message-container {
@@ -397,18 +415,22 @@ widget.style.display = 'none';
             flex: 1;
             padding: 10px;
             overflow-y: auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Background for messages */
+            background-color:transparent;
         }
         
         
         .chat-input {
             display: flex;
-            padding:0  20px 0 20px ;
-            background-color: transparent !important;
-            border-top: 1px solid #e0e0e0;
+            padding:4px  20px 5px 20px ;
+            background-color: #fcb8eef5 !important;
+            border-top: 1px solid white;
             position: sticky;
-            bottom: 20px; /* Fix to bottom of the chat container */
+            bottom: 0px; /* Fix to bottom of the chat container */
             z-index: 10;
+            border-radius: 25px 25px 0 0;
+            box-shadow: 0 0 2px #ddd;
+            margin-left:5px;
+            margin-right: 5px;
         }
 
         .chat-input input:focus{
@@ -418,7 +440,7 @@ widget.style.display = 'none';
         #user-input{
             border: none;
             background:#ececec8c;
-            height: 70%;
+
         }
         
         #user-input:focus{
@@ -432,17 +454,21 @@ widget.style.display = 'none';
             border-radius: 8px 0 10px 8px;
             padding: 10px;
             font-size: 16px;
+            height: 35px;
+
         }
         
         #send-button {
             width: 80px;
-            border-radius: 0 8px 8px 0;
             border: none;
-            background-color: blue;
+            background-color: blue ;
             color: #ffffff;
             font-size: 16px;
             cursor: pointer;
-            height: 50px;
+            height:48px;
+            margin-left: 2px;
+            border-radius:   0 25px  0  25px       ;
+
         }
         
         #send-button:hover {
@@ -482,7 +508,7 @@ widget.style.display = 'none';
         }
         
         .ai-response .message {
-            background-color: #ececec2c;
+            background-color: #ececec5c;
             box-shadow: 0 0 5px #ececec;
         }
         
